@@ -10,7 +10,7 @@ export function FirstPage() {
   useEffect(() => {
     Axios.get("https://api.coinstats.app/public/v1/coins?skip=0&limit=100").then((response) => {
       setListOfCoins(response.data.coins);
-    console.log(listOfCoins)
+    
     })
   }, [])
   const filteredCoins = listOfCoins.filter((coin) => {
@@ -62,7 +62,7 @@ export function FirstPage() {
           {filteredCoins.map((coin) => {
             return (
               <div onClick={() => {
-                console.log(coin.id);
+               
                 navigate(`/coins/${coin.id}`)
               }}>
 
